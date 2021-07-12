@@ -1,0 +1,20 @@
+{
+  "name": "Go Server",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "go.toolsManagement.checkForUpdates": "local",
+    "editor.formatOnSave": true,
+    "go.useLanguageServer": true,
+    "go.gopath": "/go",
+    "go.goroot": "/usr/local/go",
+  },
+  "extensions": [
+    "golang.Go",
+    "766b.go-outliner"
+  ],
+  "forwardPorts": [3000, 8080],
+  "postCreateCommand": "[ -e ./go.mod ] || go mod init gowiki && go mod tidy", 
+  "remoteUser": "vscode"
+}
